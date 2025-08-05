@@ -22,7 +22,7 @@ body {
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+ /* Prevent horizontal scroll */
     min-height: 100vh;
 }
 
@@ -262,6 +262,7 @@ header {
 
 .services-container {
     position: relative;
+    overflow: hidden;
     height: 400px;
 }
 
