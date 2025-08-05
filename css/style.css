@@ -34,7 +34,6 @@ body {
     z-index: 10; /* Content will be on top of the footer */
     background-color: var(--light-bg); /* Restored the original background color */
     padding-bottom: 0; /* Removed padding-bottom */
-    overflow-x: hidden;
 }
 
 .site-footer {
