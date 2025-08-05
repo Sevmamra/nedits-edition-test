@@ -1253,39 +1253,71 @@ blockquote {
 }
 
 /* Responsive Styles */
-@media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .footer-bottom .container {
-        flex-direction: row;
-    }
-}
-
+/* ==== Updated Mobile Footer Layout ==== */
 @media (max-width: 767px) {
-    .footer-col {
-        text-align: center;
-    }
-    
-    .footer-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-social {
-        justify-content: center;
-    }
-    
-    .contact-info li {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .footer-legal {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Group quick links + services in a row */
+  .footer-links,
+  .footer-services {
+    width: 100%;
+  }
+
+  .footer-links ul,
+  .footer-services ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .footer-links,
+  .footer-services {
+    text-align: left;
+  }
+
+  /* Group them inside a row container */
+  .footer-links, .footer-services {
+    width: 48%;
+  }
+
+  .footer-col-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-contact,
+  .footer-about,
+  .footer-newsletter {
+    text-align: center;
+  }
+
+  /* Social Icons */
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* Newsletter input + button in column on small phones */
+  .newsletter-form {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 }
 
 /* ======================================
