@@ -1253,70 +1253,86 @@ blockquote {
 }
 
 /* Responsive Styles */
-/* ==== Updated Mobile Footer Layout ==== */
 @media (max-width: 767px) {
+  /* REORDER FOOTER SECTIONS */
   .footer-grid {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: column-reverse; /* Invert order */
+    gap: 20px;
+    align-items: center;
   }
 
-  /* Group quick links + services in a row */
-  .footer-links,
-  .footer-services {
-    width: 100%;
-  }
-
-  .footer-links ul,
-  .footer-services ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .footer-links,
-  .footer-services {
-    text-align: left;
-  }
-
-  /* Group them inside a row container */
-  .footer-links, .footer-services {
-    width: 48%;
-  }
-
-  .footer-col-group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .footer-contact,
-  .footer-about,
+  /* NEWSLETTER AT BOTTOM */
   .footer-newsletter {
+    order: 3;
+    width: 100%;
     text-align: center;
-  }
-
-  /* Social Icons */
-  .footer-social {
-    justify-content: center;
-  }
-
-  /* Newsletter input + button in column on small phones */
-  .newsletter-form {
-    flex-direction: row;
-    gap: 10px;
+    margin-top: 40px;
+    font-size: 0.85rem;
   }
 
   .newsletter-form input {
-    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.9rem;
   }
 
-  .footer-legal {
-    flex-wrap: wrap;
+  .newsletter-form button {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* QUICK LINKS + SERVICES - SMALLER & LOWER */
+  .footer-col-group {
+    order: 2;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .footer-links,
+  .footer-services {
+    width: 48%;
+  }
+
+  .footer-links a,
+  .footer-services a {
+    font-size: 0.85rem;
+  }
+
+  /* CONTACT US - SMALLER & JUST ABOVE GROUP */
+  .footer-contact {
+    order: 1;
+    text-align: center;
+    font-size: 0.85rem;
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .footer-contact h3 {
+    font-size: 1rem;
+  }
+
+  .contact-info li {
+    font-size: 0.85rem;
     justify-content: center;
-    gap: 15px;
+  }
+
+  .footer-social {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  /* LEGAL LINKS STILL AT BOTTOM */
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-legal a {
+    font-size: 0.8rem;
   }
 }
 
