@@ -1253,9 +1253,7 @@ blockquote {
     color: #fff;
 }
 
-/* Updated Responsive Styles for Footer */
-/* Updated Responsive Styles for Footer - Adjusted Layout */
-/* Final Responsive Styles for Footer - Fine-tuned Layout */
+/* Responsive Styles for Footer */
 @media (max-width: 767px) {
     .site-footer {
         padding: 10px;
@@ -1270,8 +1268,7 @@ blockquote {
     .footer-col.footer-about {
         text-align: center;
         margin-bottom: 0;
-        /* Logo ke upar ki space ko thoda badhaya hai */
-        padding-top: 30px; 
+        padding-top: 20px; 
     }
     
     .footer-about-text {
@@ -1308,7 +1305,7 @@ blockquote {
         width: 30px;
         height: 30px;
         position: absolute;
-        top: 3px;
+        top: 2px;
         right: 3px;
     }
 
@@ -1317,9 +1314,7 @@ blockquote {
         display: flex;
         justify-content: space-around;
         gap: 10px;
-        /* Section ko thoda aur neeche laya hai */
-        margin-top: 30px; 
-        /* Aur Contact Us se pehle ki space kam ki hai */
+        margin-top: 20px; 
         margin-bottom: 5px; 
     }
     
@@ -1330,12 +1325,20 @@ blockquote {
 
     .footer-title {
         font-size: 0.9rem;
-        margin-bottom: 8px;
+        margin-bottom: 8px;/
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        width: 40px;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .footer-links ul,
     .footer-services ul {
         padding-left: 0;
+        text-align: left;
     }
 
     .footer-links a,
