@@ -22,7 +22,7 @@ body {
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-    overflow-x: clip; /* Prevent horizontal scroll */
+    overflow-x: hidden; /* Prevent horizontal scroll */
     min-height: 100vh;
 }
 
@@ -34,6 +34,7 @@ body {
     z-index: 10; /* Content will be on top of the footer */
     background-color: var(--light-bg); /* Restored the original background color */
     padding-bottom: 0; /* Removed padding-bottom */
+    overflow-x: hidden;
 }
 
 .site-footer {
