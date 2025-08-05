@@ -1,0 +1,398 @@
+/* ======================================
+    Global Reset & Body
+====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Define your color palette here */
+    --primary-color: #7b0091;
+    --secondary-color: #ee0979;
+    --accent-color: #ff6a00;
+    --text-color: #333;
+    --light-bg: #f4f4f4;
+    --dark-bg: #222;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ======================================
+    Sticky Footer Wrapper
+====================================== */
+.content-wrapper {
+    position: relative;
+    z-index: 10; /* Content will be on top of the footer */
+    background-color: var(--light-bg); /* This background color will scroll */
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Footer will be behind the content */
+    background: var(--dark-bg);
+    color: #f2f2f2;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    margin-top: 0; /* Remove the extra margin */
+}
+
+/* ======================================
+    Header (PC / Laptop / iPad)
+====================================== */
+header {
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    padding: 0px 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* Use align-items for vertical alignment */
+    justify-content: center;
+    gap: 5px;
+    padding: 2px 0;
+}
+
+.logo {
+    height: 70px;
+    /* Removed 'position: relative', 'top', 'right' */
+}
+
+.header-title-img {
+    height: 95px;
+    /* Removed 'position: relative', 'top', 'left' */
+}
+
+.tagline {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: -10px;
+    letter-spacing: 0.5px;
+}
+
+/* ======================================
+    Header — Mobile (max-width: 767px)
+====================================== */
+@media (max-width: 767px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    .header-container {
+        gap: 8px;
+        padding: 5px 0;
+    }
+
+    .logo {
+        height: 95px;
+    }
+
+    .header-title-img {
+        height: 125px;
+    }
+
+    .tagline {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: -4px;
+        letter-spacing: 0.7px;
+    }
+}
+
+/* ======================================
+    Navigation
+====================================== */
+nav {
+    background-color: var(--dark-bg);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======================================
+    Hero Section (with smooth background transition)
+====================================== */
+.hero {
+    background: url('../images/hero-bg1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 550px;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    /* The JS will handle the transition, so we can remove the CSS transition property */
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title-img {
+    height: 360px;
+    margin: 0 auto; /* Center the image */
+    display: block;
+}
+
+.explore-btn {
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-top: 20px; /* Reduced margin */
+    border: none; /* Add border for consistency */
+}
+
+.explore-btn:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ======================================
+    Section Headings
+====================================== */
+.section {
+    padding: 70px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    font-size: 32px;
+    color: var(--text-color);
+    position: relative; /* For pseudo-element underline */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px; /* A more subtle underline */
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* ======================================
+    Services Section
+====================================== */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px 20px;
+    flex: 1 1 250px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Add a transparent border for the active state */
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(123, 0, 145, 0.5); /* Use rgba for a softer shadow */
+}
+
+.service-card.active {
+    border: 2px solid var(--primary-color); /* The new border on click */
+}
+
+.service-icon {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ======================================
+    About Us Section
+====================================== */
+.about-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.about-box p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* ======================================
+    Testimonials Section
+====================================== */
+.testimonial {
+    background: #fff;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-bar {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: 80%;
+    width: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.testimonial span {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* ======================================
+    Contact Form Section
+====================================== */
+.contact-form {
+    background: #fff;
+    border-radius: 14px;
+    padding: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-btn {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.contact-btn:hover {
+    box-shadow: 0 0 20px rgba(145, 0, 145, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ======================================
+    Footer Section
+====================================== */
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #f2f2f2;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    color: #f2f2f2;
+    margin: 0 8px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======================================
+    AOS Animations Defaults
+====================================== */
+[data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
