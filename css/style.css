@@ -1254,131 +1254,136 @@ blockquote {
 }
 
 /* Updated Responsive Styles for Footer */
-/* Updated Responsive Styles for Footer - More Compact Version */
+/* Updated Responsive Styles for Footer - Adjusted Layout */
 @media (max-width: 767px) {
     .site-footer {
-        /* Footer ko aur patla karne ke liye padding kam ki hai */
         padding: 10px;
     }
 
-    /* Logo Section */
-    .footer-about {
+    .footer-grid {
+        /* Footer grid ko mobile ke liye single column rakha hai */
+        grid-template-columns: 1fr;
+        gap: 20px; /* Sections ke beech ki space */
+    }
+
+    /* Logo and Description */
+    .footer-col.footer-about {
         text-align: center;
-        margin-bottom: 15px; /* Thodi aur space kam */
+        margin-bottom: 0; /* Is section ke baad abhi space nahi deni */
+    }
+    
+    .footer-about-text {
+      font-size: 0.7rem;
+      line-height: 1.2;
+      margin-top: 5px;
+      margin-bottom: 10px; /* Newsletter se pehle thodi space */
     }
 
     .footer-logo {
-        width: 80px; /* Logo ka size aur kam */
+        width: 80px;
         margin: 0 auto 5px;
     }
 
-    .footer-about-text {
-        font-size: 0.7rem; /* Description ka font size aur chota */
-        line-height: 1.2;
-        margin-bottom: 5px; /* Description ke baad ki space kam */
-    }
-
     /* Newsletter Section */
+    .footer-newsletter {
+      margin-top: 0;
+      margin-bottom: 20px; /* Quick Links se pehle thodi space */
+    }
     .footer-newsletter h4 {
-        font-size: 0.8rem; /* Newsletter title ka size kam */
+        font-size: 0.8rem;
         margin-bottom: 5px;
     }
-
+    .newsletter-form {
+      display: block;
+      position: relative;
+    }
     .newsletter-form input {
-        width: 100%; /* Input field ko poori width di hai */
-        padding: 6px 10px; /* Input padding kam */
+        width: 100%;
+        padding: 6px 10px;
         font-size: 0.7rem;
     }
-
     .newsletter-form button {
         width: 30px;
         height: 30px;
-        position: absolute; /* Button ko field ke andar rakha hai */
+        position: absolute;
         top: 3px;
         right: 3px;
     }
 
-    /* Quick Links aur Our Services Section */
+    /* Quick Links aur Our Services ko side-by-side karne ke liye */
     .footer-col-group {
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-bottom: 15px; /* Sections ke beech ki space kam */
+        display: flex;
+        justify-content: space-around;
         gap: 10px;
+        margin-top: 0; /* Newsletter ke baad ki space already hai */
+        margin-bottom: 20px; /* Contact Us se pehle space */
     }
-
+    
     .footer-links,
     .footer-services {
-        width: 48%; /* Adjust for spacing */
+        width: 48%; /* Dono ko barabar space dene ke liye */
     }
 
     .footer-title {
-        font-size: 0.9rem; /* Title ka size aur kam */
+        font-size: 0.9rem;
         margin-bottom: 8px;
     }
-
-    .footer-title::after {
-        width: 30px;
+    
+    .footer-links ul,
+    .footer-services ul {
+        padding-left: 0;
     }
 
     .footer-links a,
     .footer-services a {
-        font-size: 0.7rem; /* Link text ka size kam */
+        font-size: 0.7rem;
         line-height: 1.4;
-        margin-bottom: 3px; /* Links ke beech ki space kam */
+        margin-bottom: 3px;
+        display: block;
         padding-left: 8px;
     }
 
     /* Contact Us Section */
     .footer-contact {
         text-align: center;
-        margin-top: 10px;
-        margin-bottom: 15px; /* Section ke baad ki space kam */
+        margin-top: 0; /* Quick Links ke baad ki space already hai */
+        margin-bottom: 15px; /* Social Icons se pehle space */
     }
-
     .contact-info li {
-        font-size: 0.7rem; /* Contact info ka size kam */
-        margin-bottom: 5px; /* Har line ke beech ki space kam */
+        font-size: 0.7rem;
+        margin-bottom: 5px;
         justify-content: center;
     }
-    
     .contact-info svg {
         width: 14px;
         height: 14px;
         margin-right: 6px;
     }
 
+    /* Social Icons */
     .footer-social {
         justify-content: center;
-        margin-top: 10px;
-        gap: 8px; /* Social icons ke beech ki space kam */
+        margin-top: 0; /* Contact Us ke baad ki space already hai */
+        margin-bottom: 15px; /* Copyright se pehle space */
+        gap: 8px;
     }
-
     .footer-social a {
         width: 22px;
         height: 22px;
     }
 
-    .footer-social svg {
-        width: 12px;
-        height: 12px;
-    }
-
     /* Footer Bottom Part */
     .footer-bottom {
-        padding: 8px 0; /* Copyright section ki padding kam */
-        margin-top: 10px; /* Is section se pehle ki space kam */
+        padding: 8px 0;
+        margin-top: 0; /* Social icons ke baad ki space already hai */
     }
-
     .footer-bottom .container {
         gap: 5px;
     }
-
     .footer-copyright p,
     .footer-legal a {
-        font-size: 0.7rem; /* Copyright aur legal links ka size kam */
+        font-size: 0.7rem;
     }
-    
     .footer-legal {
       gap: 5px;
     }
