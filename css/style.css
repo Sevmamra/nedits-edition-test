@@ -1405,6 +1405,19 @@ blockquote {
     }
 }
 
+/* This media query will apply only to devices with screen width >= 768px (tablets & desktops) */
+@media (min-width: 768px) {
+    .footer-col-group {
+        display: flex; /* Makes sure Quick Links and Our Services are side-by-side */
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .footer-col-group .footer-col {
+        flex: 1;
+    }
+}
+
 /* ======================================
     AOS Animations
 ====================================== */
