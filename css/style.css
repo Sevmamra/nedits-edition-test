@@ -1254,53 +1254,57 @@ blockquote {
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-  /* PATLA footer base */
+  /* Whole Footer */
   .site-footer {
-    padding: 30px 15px 20px;
+    padding: 40px 12px 18px;
   }
 
   /* Logo */
   .footer-logo {
-    width: 60px;
-    margin: 0 auto 10px;
+    width: 50px;
+    margin: 0 auto 12px;
   }
 
   /* Description */
   .footer-about-text {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     line-height: 1.3;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
   }
 
-  /* Newsletter */
+  /* Newsletter Section */
+  .footer-newsletter {
+    margin-top: 15px;
+  }
+
   .footer-newsletter h4 {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
   }
 
   .newsletter-form {
     flex-direction: row;
-    gap: 6px;
+    gap: 5px;
     justify-content: center;
   }
 
   .newsletter-form input {
-    padding: 6px 10px;
-    font-size: 0.75rem;
-    flex: 1;
+    padding: 5px 8px;
+    font-size: 0.7rem;
   }
 
   .newsletter-form button {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
   }
 
-  /* Quick Links + Services */
+  /* Quick Links + Our Services */
   .footer-col-group {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-top: 15px;
   }
 
   .footer-links,
@@ -1310,57 +1314,63 @@ blockquote {
 
   .footer-links h3,
   .footer-services h3 {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin-bottom: 6px;
   }
 
   .footer-links a,
   .footer-services a {
-    font-size: 0.7rem;
-    line-height: 1.4;
+    font-size: 0.65rem;
+    line-height: 1.3;
   }
 
   /* Contact Us */
-  .footer-contact h3 {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
+  .footer-contact {
+    margin-top: 18px;
   }
 
-  .contact-info li {
+  .footer-contact h3 {
     font-size: 0.75rem;
     margin-bottom: 6px;
   }
 
+  .contact-info li {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+
+  /* Social Icons */
   .footer-social {
     justify-content: center;
     margin-top: 10px;
-    gap: 10px;
+    gap: 8px;
   }
 
   .footer-social a {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
   }
 
-  /* Bottom bar */
-  .footer-bottom .container {
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-    padding-top: 10px;
+  /* Footer Bottom (Legal Stuff) */
+  .footer-bottom {
+    padding: 10px 0 5px;
   }
 
   .footer-bottom p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     margin: 0;
   }
 
-  .footer-legal a {
-    font-size: 0.7rem;
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 5px;
   }
 
-  .footer-bottom {
-    padding: 10px 0;
+  .footer-legal a {
+    font-size: 0.65rem;
   }
 }
 
