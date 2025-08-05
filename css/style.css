@@ -1261,33 +1261,34 @@ blockquote {
     }
 
     .footer-grid {
-        /* Footer grid ko mobile ke liye single column rakha hai */
         grid-template-columns: 1fr;
-        gap: 20px; /* Sections ke beech ki space */
+        gap: 15px; /* Sections ke beech ki space aur kam ki hai */
     }
 
     /* Logo and Description */
     .footer-col.footer-about {
         text-align: center;
-        margin-bottom: 0; /* Is section ke baad abhi space nahi deni */
+        margin-bottom: 0;
+        /* Logo ke upar ki space ko adjust karne ke liye */
+        padding-top: 10px; /* Ya fir isko bilkul hata sakte hain agar zero space chahiye */
     }
     
     .footer-about-text {
       font-size: 0.7rem;
       line-height: 1.2;
       margin-top: 5px;
-      margin-bottom: 10px; /* Newsletter se pehle thodi space */
+      margin-bottom: 10px;
     }
 
     .footer-logo {
         width: 80px;
-        margin: 0 auto 5px;
+        margin: 0 auto; /* Margin-bottom hataya */
     }
 
     /* Newsletter Section */
     .footer-newsletter {
       margin-top: 0;
-      margin-bottom: 20px; /* Quick Links se pehle thodi space */
+      margin-bottom: 10px; /* Quick Links se pehle ki space aur kam */
     }
     .footer-newsletter h4 {
         font-size: 0.8rem;
@@ -1310,18 +1311,18 @@ blockquote {
         right: 3px;
     }
 
-    /* Quick Links aur Our Services ko side-by-side karne ke liye */
+    /* Quick Links aur Our Services section ko thoda neeche karne ke liye */
     .footer-col-group {
         display: flex;
         justify-content: space-around;
         gap: 10px;
-        margin-top: 0; /* Newsletter ke baad ki space already hai */
-        margin-bottom: 20px; /* Contact Us se pehle space */
+        margin-top: 10px; /* Thoda aur neeche kiya hai */
+        margin-bottom: 10px; /* Contact Us se pehle ki space ko thoda kam kiya hai */
     }
     
     .footer-links,
     .footer-services {
-        width: 48%; /* Dono ko barabar space dene ke liye */
+        width: 48%;
     }
 
     .footer-title {
@@ -1346,8 +1347,8 @@ blockquote {
     /* Contact Us Section */
     .footer-contact {
         text-align: center;
-        margin-top: 0; /* Quick Links ke baad ki space already hai */
-        margin-bottom: 15px; /* Social Icons se pehle space */
+        margin-top: 0; /* Isko kam rakha hai taaki Quick Links se upar na chala jaye */
+        margin-bottom: 10px;
     }
     .contact-info li {
         font-size: 0.7rem;
@@ -1363,8 +1364,8 @@ blockquote {
     /* Social Icons */
     .footer-social {
         justify-content: center;
-        margin-top: 0; /* Contact Us ke baad ki space already hai */
-        margin-bottom: 15px; /* Copyright se pehle space */
+        margin-top: 0;
+        margin-bottom: 10px;
         gap: 8px;
     }
     .footer-social a {
@@ -1375,7 +1376,7 @@ blockquote {
     /* Footer Bottom Part */
     .footer-bottom {
         padding: 8px 0;
-        margin-top: 0; /* Social icons ke baad ki space already hai */
+        margin-top: 0;
     }
     .footer-bottom .container {
         gap: 5px;
