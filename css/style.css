@@ -23,6 +23,7 @@ body {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Added for sticky footer */
 }
 
 /* ======================================
@@ -32,6 +33,7 @@ body {
     position: relative;
     z-index: 10; /* Content will be on top of the footer */
     background-color: var(--light-bg); /* This background color will scroll */
+    padding-bottom: 250px; /* Added padding to make space for the sticky footer */
 }
 
 .site-footer {
@@ -729,7 +731,7 @@ blockquote {
 .contact-section {
     background: var(--primary-color);
     color: white;
-    padding: 100px 0 0;
+    padding: 100px 0; /* Removed the 0 padding-bottom for this section */
     padding-left: 20px;
     padding-right: 20px;
     position: relative;
@@ -1010,11 +1012,15 @@ blockquote {
     FOOTER SECTION - NEW DESIGN
 ====================================== */
 .site-footer {
-    position: relative;
-    background: #111;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: var(--dark-bg);
     color: #fff;
     padding-top: 100px;
-    margin-top: -1;
+    margin-top: 0;
 }
 
 .footer-content {
@@ -1395,9 +1401,9 @@ blockquote {
 }
 
 #journey .section-title {
-    color: var(--text-color);
     text-align: center;
     font-size: 2.2rem;
+    color: var(--text-color);
     margin-bottom: 40px;
 }
 
