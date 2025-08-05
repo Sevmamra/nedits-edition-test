@@ -1255,6 +1255,7 @@ blockquote {
 
 /* Updated Responsive Styles for Footer */
 /* Updated Responsive Styles for Footer - Adjusted Layout */
+/* Final Responsive Styles for Footer - Fine-tuned Layout */
 @media (max-width: 767px) {
     .site-footer {
         padding: 10px;
@@ -1262,15 +1263,15 @@ blockquote {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 15px; /* Sections ke beech ki space aur kam ki hai */
+        gap: 15px;
     }
 
-    /* Logo and Description */
+    /* Logo and Description - Adjusted Padding Top */
     .footer-col.footer-about {
         text-align: center;
         margin-bottom: 0;
-        /* Logo ke upar ki space ko adjust karne ke liye */
-        padding-top: 10px; /* Ya fir isko bilkul hata sakte hain agar zero space chahiye */
+        /* Logo ke upar ki space ko thoda badhaya hai */
+        padding-top: 20px; 
     }
     
     .footer-about-text {
@@ -1282,13 +1283,13 @@ blockquote {
 
     .footer-logo {
         width: 80px;
-        margin: 0 auto; /* Margin-bottom hataya */
+        margin: 0 auto;
     }
 
     /* Newsletter Section */
     .footer-newsletter {
       margin-top: 0;
-      margin-bottom: 10px; /* Quick Links se pehle ki space aur kam */
+      margin-bottom: 10px;
     }
     .footer-newsletter h4 {
         font-size: 0.8rem;
@@ -1311,13 +1312,15 @@ blockquote {
         right: 3px;
     }
 
-    /* Quick Links aur Our Services section ko thoda neeche karne ke liye */
+    /* Quick Links aur Our Services - Moved Down & Space Reduced */
     .footer-col-group {
         display: flex;
         justify-content: space-around;
         gap: 10px;
-        margin-top: 10px; /* Thoda aur neeche kiya hai */
-        margin-bottom: 10px; /* Contact Us se pehle ki space ko thoda kam kiya hai */
+        /* Section ko thoda aur neeche laya hai */
+        margin-top: 20px; 
+        /* Aur Contact Us se pehle ki space kam ki hai */
+        margin-bottom: 5px; 
     }
     
     .footer-links,
@@ -1347,7 +1350,7 @@ blockquote {
     /* Contact Us Section */
     .footer-contact {
         text-align: center;
-        margin-top: 0; /* Isko kam rakha hai taaki Quick Links se upar na chala jaye */
+        margin-top: 0;
         margin-bottom: 10px;
     }
     .contact-info li {
