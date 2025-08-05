@@ -1254,28 +1254,27 @@ blockquote {
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-  /* Whole Footer */
   .site-footer {
-    padding: 40px 12px 18px;
+    padding: 20px 10px 10px;
   }
 
   /* Logo */
   .footer-logo {
     width: 50px;
-    margin: 0 auto 12px;
+    margin: 0 auto 6px;
   }
 
   /* Description */
   .footer-about-text {
     font-size: 0.7rem;
     line-height: 1.3;
-    margin-bottom: 15px;
-    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-top: 5px;
   }
 
-  /* Newsletter Section */
+  /* Newsletter */
   .footer-newsletter {
-    margin-top: 15px;
+    margin-top: 8px;
   }
 
   .footer-newsletter h4 {
@@ -1299,12 +1298,12 @@ blockquote {
     height: 28px;
   }
 
-  /* Quick Links + Our Services */
+  /* Links Section */
   .footer-col-group {
     display: flex;
     justify-content: space-between;
-    gap: 8px;
-    margin-top: 15px;
+    gap: 6px;
+    margin-top: 10px;
   }
 
   .footer-links,
@@ -1322,11 +1321,12 @@ blockquote {
   .footer-services a {
     font-size: 0.65rem;
     line-height: 1.3;
+    margin-bottom: 4px;
   }
 
   /* Contact Us */
   .footer-contact {
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   .footer-contact h3 {
@@ -1336,10 +1336,9 @@ blockquote {
 
   .contact-info li {
     font-size: 0.7rem;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
-  /* Social Icons */
   .footer-social {
     justify-content: center;
     margin-top: 10px;
@@ -1349,12 +1348,17 @@ blockquote {
   .footer-social a {
     width: 24px;
     height: 24px;
-    font-size: 0.7rem;
   }
 
-  /* Footer Bottom (Legal Stuff) */
+  /* Footer Bottom */
   .footer-bottom {
-    padding: 10px 0 5px;
+    padding: 8px 0 5px;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
   }
 
   .footer-bottom p {
@@ -1365,8 +1369,8 @@ blockquote {
   .footer-legal {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px;
-    margin-top: 5px;
+    gap: 5px;
+    margin-top: 3px;
   }
 
   .footer-legal a {
