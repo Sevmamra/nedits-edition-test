@@ -726,216 +726,6 @@ blockquote {
 }
 
 /* ======================================
-    Skills Orbit Section
-====================================== */
-.skills-orbit {
-    text-align: center;
-    padding: 80px 20px;
-    background: #fff;
-}
-
-.skills-orbit .section-title {
-    color: var(--text-color);
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-}
-
-.orbit-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 0 auto;
-}
-
-.center-sun {
-    width: 80px;
-    height: 80px;
-    background: var(--primary-color);
-    color: #fff;
-    border-radius: 50%;
-    line-height: 80px;
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 25px var(--primary-color), 0 0 60px var(--primary-color);
-    z-index: 2;
-}
-
-/* Orbit Rings */
-.orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border: 1px dashed rgba(123, 0, 145, 0.6); /* Using rgba with variable */
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: rotate linear infinite;
-}
-
-.orbit-1 {
-    width: 100px;
-    height: 100px;
-    animation-duration: 6s;
-}
-
-.orbit-2 {
-    width: 160px;
-    height: 160px;
-    animation-duration: 8s;
-}
-
-.orbit-3 {
-    width: 220px;
-    height: 220px;
-    animation-duration: 10s;
-}
-
-.orbit-4 {
-    width: 280px;
-    height: 280px;
-    animation-duration: 12s;
-}
-
-@keyframes rotate {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Orbit Labels */
-.orbit-label {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--primary-color);
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 0.85rem;
-    box-shadow: 0 0 8px rgba(123, 0, 145, 0.6); /* Using rgba with variable */
-}
-
-/* ======================================
-    Timeline Section
-====================================== */
-#journey {
-    padding: 80px 20px;
-}
-
-#journey .section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: var(--text-color);
-    margin-bottom: 40px;
-}
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-left: 40px;
-}
-
-.vertical-line {
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--primary-color), transparent);
-    animation: growLine 2.5s ease-out forwards;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.timeline-item:nth-child(2) { animation-delay: 1s; }
-.timeline-item:nth-child(3) { animation-delay: 2s; }
-.timeline-item:nth-child(4) { animation-delay: 3s; }
-
-.timeline-dot {
-    position: absolute;
-    left: 14px;
-    top: 6px;
-    width: 14px;
-    height: 14px;
-    background: var(--primary-color);
-    border-radius: 50%;
-}
-
-.timeline-content {
-    margin-left: 40px;
-    background: var(--dark-bg);
-    color: #fff;
-    padding: 15px 20px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(123, 0, 145, 0.5); /* Using rgba with variable */
-}
-
-.timeline-content h4 {
-    margin: 0;
-    color: var(--primary-color);
-}
-
-@keyframes growLine {
-    from { height: 0; }
-    to { height: 100%; }
-}
-
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-/* ======================================
-    Achievements Section
-====================================== */
-#achievements {
-    padding: 80px 20px;
-}
-
-#achievements .section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: var(--text-color);
-}
-
-.counters-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.counter {
-    flex: 1 1 200px;
-    max-width: 220px;
-    background: #f8f8f8;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(123, 0, 145, 0.2); /* Using rgba with variable */
-}
-
-.counter h3 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-}
-
-.counter p {
-    margin-top: 5px;
-    font-weight: bold;
-}
-
-/* ======================================
     CONTACT SECTION - NEW DESIGN
 ====================================== */
 .contact-section {
@@ -1509,3 +1299,214 @@ blockquote {
 [data-aos].aos-animate {
     opacity: 1;
 }
+
+/* ======================================
+    Skills Orbit Section
+====================================== */
+.skills-orbit {
+    text-align: center;
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.skills-orbit .section-title {
+    color: var(--text-color);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.orbit-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.center-sun {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 25px var(--primary-color), 0 0 60px var(--primary-color);
+    z-index: 2;
+}
+
+/* Orbit Rings */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(123, 0, 145, 0.6); /* Using rgba with variable */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate linear infinite;
+}
+
+.orbit-1 {
+    width: 100px;
+    height: 100px;
+    animation-duration: 6s;
+}
+
+.orbit-2 {
+    width: 160px;
+    height: 160px;
+    animation-duration: 8s;
+}
+
+.orbit-3 {
+    width: 220px;
+    height: 220px;
+    animation-duration: 10s;
+}
+
+.orbit-4 {
+    width: 280px;
+    height: 280px;
+    animation-duration: 12s;
+}
+
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Orbit Labels */
+.orbit-label {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary-color);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    box-shadow: 0 0 8px rgba(123, 0, 145, 0.6); /* Using rgba with variable */
+}
+
+/* ======================================
+    Timeline Section
+====================================== */
+#journey {
+    padding: 80px 20px;
+}
+
+#journey .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), transparent);
+    animation: growLine 2.5s ease-out forwards;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.timeline-item:nth-child(2) { animation-delay: 1s; }
+.timeline-item:nth-child(3) { animation-delay: 2s; }
+.timeline-item:nth-child(4) { animation-delay: 3s; }
+
+.timeline-dot {
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.timeline-content {
+    margin-left: 40px;
+    background: var(--dark-bg);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(123, 0, 145, 0.5); /* Using rgba with variable */
+}
+
+.timeline-content h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+@keyframes growLine {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ======================================
+    Achievements Section
+====================================== */
+#achievements {
+    padding: 80px 20px;
+}
+
+#achievements .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.counters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.counter {
+    flex: 1 1 200px;
+    max-width: 220px;
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(123, 0, 145, 0.2); /* Using rgba with variable */
+}
+
+.counter h3 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.counter p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
