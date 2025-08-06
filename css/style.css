@@ -481,12 +481,12 @@ header {
     box-shadow: 0 5px 15px rgba(123, 0, 145, 0.3);
 }
 
-/* Left Arrow Button (<) - thoda left side */
+/* Left Arrow Button (<) -  left side */
 .carousel-nav .carousel-prev {
     margin-left: -10px;
 }
 
-/* Right Arrow Button (>) - thoda right side */
+/* Right Arrow Button (>) - right side */
 .carousel-nav .carousel-next {
     margin-right: -10px;
 }
@@ -499,6 +499,10 @@ header {
 .carousel-nav button svg {
     width: 24px;
     height: 24px;
+}
+
+.carousel-nav button {
+    font-size: 24px;
 }
 
 /* Mobile Services */
