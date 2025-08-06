@@ -1,0 +1,47 @@
+{
+  "about": {
+    "intro": "Nedits Edition isn't just a service provider; it's a full-fledged digital creative studio built for the modern era.",
+    "mission": "Deliver quality digital services with transparency, creativity & strategy—helping clients grow smarter.",
+    "vision": "To empower creators and businesses through simple, creative & accessible digital growth.",
+    "features": [
+      {
+        "icon": "🎨",
+        "title": "All-in-One Studio",
+        "description": "Creative, tech, marketing—all delivered under one roof."
+      },
+      {
+        "icon": "🚀",
+        "description": "Future-Ready Skills",
+        "title": "AI, Web3, automation tools, and more—powered by innovation."
+      },
+      {
+        "icon": "💡",
+        "title": "Creative Solutions",
+        "description": "We think outside the box to deliver unique digital experiences."
+      },
+      {
+        "icon": "🌐",
+        "title": "Global Perspective",
+        "description": "Serving clients worldwide with localized strategies."
+      }
+    ],
+    "stats": [
+      {
+        "value": "150+",
+        "label": "Happy Clients"
+      },
+      {
+        "value": "300+",
+        "label": "Projects Completed"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "24/7",
+        "label": "Support Available"
+      }
+    ]
+  }
+}
