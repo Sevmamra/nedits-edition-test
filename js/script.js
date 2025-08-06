@@ -31,78 +31,59 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+
 // ----------------------------------------------------
-// About Us Section ka Code (Naye aur sahi tareeke se)
+// New About Us Section ka Code (Typewriter Effect)
 // ----------------------------------------------------
-
-// About Data ko JSON file se load karna
-async function loadAboutData() {
-    try {
-        const response = await fetch('data/about.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        populateAboutSection(data.about);
-    } catch (error) {
-        console.error('Error loading about data:', error);
-    }
-}
-
-// Data ko HTML ke andar sahi IDs mein daalna
-function populateAboutSection(aboutData) {
-    // Intro panel ka content set karna
-    const introText = document.getElementById('dna-intro');
-    if (introText) introText.textContent = aboutData.intro;
-    
-    // Mission panel ka content set karna
-    const missionText = document.getElementById('dna-mission');
-    if (missionText) missionText.textContent = aboutData.mission;
-    
-    // Vision panel ka content set karna
-    const visionText = document.getElementById('dna-vision');
-    if (visionText) visionText.textContent = aboutData.vision;
-    
-    // Features (Values) ke cards ko dynamically create karna
-    const featuresContainer = document.getElementById('dna-values');
-    if (featuresContainer && aboutData.features) {
-        featuresContainer.innerHTML = ''; // Pehle se मौजूद content ko saaf kar dena
-        aboutData.features.forEach(feature => {
-            const featureCard = document.createElement('div');
-            featureCard.className = 'value-card';
-            featureCard.innerHTML = `
-                <h4>${feature.title}</h4>
-                <p>${feature.description}</p>
-            `;
-            featuresContainer.appendChild(featureCard);
-        });
-    }
-}
-
-// Dna nodes par click listeners add karna jisse panels switch honge
 function initAboutSection() {
-    loadAboutData();
-
-    const dnaNodes = document.querySelectorAll('.dna-node');
-    const dnaPanels = document.querySelectorAll('.dna-panels .panel');
-
-    dnaNodes.forEach(node => {
-        node.addEventListener('click', () => {
-            // Sabhi nodes aur panels se 'active' class hatana
-            dnaNodes.forEach(n => n.classList.remove('active'));
-            dnaPanels.forEach(p => p.classList.remove('active'));
+    // Load content from JSON
+    fetch('data/about.json')
+        .then(response => response.json())
+        .then(data => {
+            // Typewriter effect for main text
+            typewriterEffect('about-text', data.about.main);
             
-            // Clicked node par 'active' class lagana
-            node.classList.add('active');
+            // Set other content
+            const approachElement = document.getElementById('approach-text');
+            if (approachElement) {
+                approachElement.textContent = data.about.approach;
+            }
             
-            // Us node se related panel ko dhoondhna aur 'active' class lagana
-            const targetContent = node.getAttribute('data-content');
-            const targetPanel = document.querySelector(`.${targetContent}-panel`);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
+            // Populate benefits list
+            const benefitsList = document.getElementById('benefits-list');
+            if (benefitsList && data.about.benefits) {
+                benefitsList.innerHTML = ''; // Clear old content
+                data.about.benefits.forEach(benefit => {
+                    const li = document.createElement('li');
+                    li.textContent = benefit;
+                    benefitsList.appendChild(li);
+                });
+            }
+        })
+        .catch(error => console.error('Error loading about data:', error));
+
+    // Typewriter function
+    function typewriterEffect(elementId, text) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        element.textContent = '';
+        let i = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i++);
+                        setTimeout(type, 20);
+                    }
+                }
+                type();
+                observer.disconnect();
             }
         });
-    });
+        observer.observe(element);
+    }
 }
 
 
