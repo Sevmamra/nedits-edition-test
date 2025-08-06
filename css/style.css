@@ -1657,236 +1657,124 @@ header {
 }
 
 /* ======================================
-    Premium Skills Orbit Section
+    Skills Orbit Section - Cyan Image Style
 ====================================== */
-.skills-orbit {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  position: relative;
-  overflow: hidden;
+
+/* Colors ko update karein */
+:root {
+    --primary-color: #00e5ff; /* Cyan color */
+    --text-color: #333;
 }
 
-.skills-orbit::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 0%, rgba(123, 0, 145, 0.03) 100%);
-  z-index: 0;
-}
-
-.skills-orbit .section-title {
-  color: #2a2a2a;
-  font-size: 2.5rem;
-  margin-bottom: 60px;
-  position: relative;
-  display: inline-block;
-  font-weight: 600;
-}
-
-.skills-orbit .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-color);
-  border-radius: 3px;
-}
-
+/* Yahan hum orbits ko alag alag position karenge */
 .orbit-container {
-  position: relative;
-  width: min(90vw, 500px);
-  height: min(90vw, 500px);
-  margin: 0 auto;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
 }
 
-/* Center Sun Design */
 .center-sun {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #8a2be2 100%);
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 30px rgba(123, 0, 145, 0.4);
-  z-index: 10;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    line-height: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 25px var(--primary-color), 0 0 60px var(--primary-color);
+    z-index: 2;
 }
 
-.sun-inner {
-  position: relative;
-  z-index: 2;
-}
-
-.sun-pulse {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  border-radius: 50%;
-  animation: pulse 3s infinite;
-  opacity: 0;
-  z-index: 1;
-}
-
-/* Orbit Rings */
+/* Existing Orbit rings ko hide kar denge ya naya tareeka use karenge */
+/* Ye naya CSS hai jo aapke existing .orbit styles ko replace kar dega */
 .orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgba(123, 0, 145, 0.15);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: rotate linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    /* Isse har label apne center ke around ghumega */
+    width: 0;
+    height: 0;
+    animation: rotate-orbit linear infinite;
 }
 
 .orbit-1 {
-  width: 120px;
-  height: 120px;
-  animation-duration: 8s;
-  animation-direction: reverse;
+    animation-duration: 10s;
 }
 
 .orbit-2 {
-  width: 200px;
-  height: 200px;
-  animation-duration: 12s;
+    animation-duration: 12s;
 }
 
 .orbit-3 {
-  width: 280px;
-  height: 280px;
-  animation-duration: 16s;
-  animation-direction: reverse;
+    animation-duration: 14s;
 }
 
 .orbit-4 {
-  width: 360px;
-  height: 360px;
-  animation-duration: 20s;
+    animation-duration: 16s;
 }
 
-/* Orbit Labels */
+/* Keyframes for the new rotation */
+@keyframes rotate-orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Orbit Labels ko redesign karenge */
+/* Ye naya CSS hai jo aapke existing .orbit-label styles ko replace kar dega */
 .orbit-label {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  color: #2a2a2a;
-  padding: 12px 15px;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  min-width: 100px;
-  transition: all 0.3s ease;
-  z-index: 5;
-  cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+    position: absolute;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    box-shadow: 0 0 8px var(--primary-color);
+    white-space: nowrap;
+    
+    /* Ye property usse center se door move karegi */
+    transform: translate(-50%, -50%);
 }
 
-.orbit-label:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  background: var(--primary-color);
-  color: white;
+/* Har label ko alag-alag radius par set karenge */
+.orbit-1 .orbit-label {
+    left: 100px; /* Center se door */
 }
 
-.skill-icon {
-  font-size: 1.5rem;
+.orbit-2 .orbit-label {
+    left: 160px; /* Center se aur door */
 }
 
-.skill-name {
-  font-size: 0.9rem;
+.orbit-3 .orbit-label {
+    left: 220px;
 }
 
-/* Connecting Lines */
-.connecting-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.orbit-4 .orbit-label {
+    left: 280px;
 }
 
-.connecting-lines::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 0%, rgba(123, 0, 145, 0.1) 50%, transparent 100%);
-  transform: translate(-50%, -50%);
-}
-
-.connecting-lines::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent 0%, rgba(123, 0, 145, 0.1) 50%, transparent 100%);
-  transform: translate(-50%, -50%);
-}
-
-/* Animations */
-@keyframes rotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  70% { transform: scale(1.4); opacity: 0; }
-  100% { transform: scale(1.4); opacity: 0; }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .skills-orbit {
-    padding: 60px 20px;
-  }
-  
-  .orbit-container {
-    width: min(90vw, 400px);
-    height: min(90vw, 400px);
-  }
-  
-  .orbit-1 { width: 100px; height: 100px; }
-  .orbit-2 { width: 160px; height: 160px; }
-  .orbit-3 { width: 220px; height: 220px; }
-  .orbit-4 { width: 280px; height: 280px; }
-  
-  .orbit-label {
-    padding: 8px 12px;
-    min-width: 80px;
-  }
-  
-  .skill-icon {
-    font-size: 1.2rem;
-  }
+/* Optional: Dashed lines (orbits) ko bhi create kar sakte hain, agar chahiye */
+/* Iske liye har orbit-label ke peeche ek pseudo-element banayenge */
+.orbit-label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; /* Label ke left side se */
+    transform: translateY(-50%) translateX(-100%);
+    height: 1px;
+    width: 200px; /* Center se aage tak */
+    border-top: 1px dashed var(--primary-color);
 }
 
 /* ======================================
