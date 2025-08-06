@@ -31,59 +31,84 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ----------------------------------------------------
+// New About Us Section ka Code (Typewriter + Read More)
+// ----------------------------------------------------
 
-// ----------------------------------------------------
-// New About Us Section ka Code (Typewriter Effect)
-// ----------------------------------------------------
 function initAboutSection() {
     // Load content from JSON
     fetch('data/about.json')
         .then(response => response.json())
         .then(data => {
-            // Typewriter effect for main text
-            typewriterEffect('about-text', data.about.main);
-            
-            // Set other content
-            const approachElement = document.getElementById('approach-text');
-            if (approachElement) {
-                approachElement.textContent = data.about.approach;
+            // Set text content
+            const aboutTextElement = document.getElementById('about-text');
+            if (aboutTextElement) {
+                aboutTextElement.textContent = data.about.intro;
+                initTypewriter('about-text'); // Typewriter effect ko initialize karna
             }
             
-            // Populate benefits list
-            const benefitsList = document.getElementById('benefits-list');
-            if (benefitsList && data.about.benefits) {
-                benefitsList.innerHTML = ''; // Clear old content
-                data.about.benefits.forEach(benefit => {
+            const philosophyTextElement = document.getElementById('philosophy-text');
+            if (philosophyTextElement) {
+                philosophyTextElement.textContent = data.about.philosophy;
+            }
+            
+            const approachTextElement = document.getElementById('approach-text');
+            if (approachTextElement) {
+                approachTextElement.textContent = data.about.approach;
+            }
+            
+            // Populate values list
+            const valuesList = document.getElementById('values-list');
+            if (valuesList && data.about.values) {
+                valuesList.innerHTML = ''; // Clear old content
+                data.about.values.forEach(value => {
                     const li = document.createElement('li');
-                    li.textContent = benefit;
-                    benefitsList.appendChild(li);
+                    li.textContent = value;
+                    valuesList.appendChild(li);
                 });
             }
         })
         .catch(error => console.error('Error loading about data:', error));
 
-    // Typewriter function
-    function typewriterEffect(elementId, text) {
-        const element = document.getElementById(elementId);
-        if (!element) return;
-        
-        element.textContent = '';
-        let i = 0;
-        
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                function type() {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i++);
-                        setTimeout(type, 20);
-                    }
-                }
-                type();
-                observer.disconnect();
+    // Read more toggle
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    if (readMoreBtn) {
+        readMoreBtn.addEventListener('click', function() {
+            const aboutContent = document.querySelector('.about-content');
+            if (aboutContent) {
+                aboutContent.classList.toggle('about-expanded');
+                
+                // Update button text
+                const isExpanded = aboutContent.classList.contains('about-expanded');
+                this.querySelector('span').textContent = isExpanded ? 'Read Less' : 'Read More';
             }
         });
-        observer.observe(element);
     }
+}
+
+// Typewriter Effect Function
+function initTypewriter(elementId) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            const fullText = element.textContent;
+            element.textContent = '';
+            
+            let i = 0;
+            function type() {
+                if (i < fullText.length) {
+                    element.textContent += fullText.charAt(i++);
+                    setTimeout(type, Math.random() * 10 + 15); // Variable speed for natural feel
+                }
+            }
+            type();
+            observer.disconnect();
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
 }
 
 
