@@ -1,25 +1,13 @@
 {
   "about": {
-    "intro": "At Nedits Edition, we don't just create digital solutions - we engineer experiences that resonate. Born from a fusion of technical mastery and creative passion, we're the architects of your digital future.",
-    "mission": "To push boundaries by merging cutting-edge technology with human-centric design, delivering solutions that don't just meet expectations but redefine them.",
-    "vision": "A world where technology enhances human connection without compromising creativity or individuality - and we're leading that charge.",
-    "features": [
-      {
-        "title": "Radical Transparency",
-        "description": "No hidden agendas or confusing jargon - just honest, clear communication."
-      },
-      {
-        "title": "Bold Creativity",
-        "description": "We embrace the unconventional to deliver solutions that stand out."
-      },
-      {
-        "title": "Precision Engineering",
-        "description": "Every pixel and line of code is meticulously crafted for purpose."
-      },
-      {
-        "title": "Future-Focused",
-        "description": "We don't just adapt to trends - we help shape what comes next."
-      }
+    "main": "Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.",
+    "approach": "We believe in quality over quantity. Every project receives personal attention, with solutions tailored to your unique needs. Our process blends creativity with strategy to deliver results that matter.",
+    "benefits": [
+      "Handcrafted solutions (no templates or generic work)",
+      "Direct communication with the creative team",
+      "Fast turnaround without compromising quality",
+      "Continuous support even after project completion",
+      "Transparent pricing with no hidden fees"
     ]
   }
 }
