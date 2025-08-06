@@ -1,0 +1,220 @@
+{
+    "services": [
+        {
+            "category": "Creative & Visual Services",
+            "icon": "icon-creative.png",
+            "services": [
+                {
+                    "title": "Graphic Designing",
+                    "icon": "graphic-design.png",
+                    "description": "We create eye-catching designs for your brand including social media posts, flyers, posters, business cards, brochures, and complete brand kits.",
+                    "slug": "graphic-designing"
+                },
+                {
+                    "title": "Motion Graphics",
+                    "icon": "motion-graphics.png",
+                    "description": "We produce animated videos, logo intros, kinetic typography, and visual effects that make your content more dynamic and engaging.",
+                    "slug": "motion-graphics"
+                },
+                {
+                    "title": "3D Design & Modeling",
+                    "icon": "3d-design.png",
+                    "description": "We design realistic 3D models and product mockups for branding, packaging, architecture visualization, and more.",
+                    "slug": "3d-design-modeling"
+                },
+                {
+                    "title": "Photo Editing & Retouching",
+                    "icon": "photo-editing.png",
+                    "description": "We provide professional photo editing services including background removal, retouching, color correction, and image enhancement.",
+                    "slug": "photo-editing-retouching"
+                },
+                {
+                    "title": "UI/UX Design",
+                    "icon": "ui-ux-design.png",
+                    "description": "We design clean and modern user interfaces for websites and mobile apps. From wireframes to interactive prototypes, we ensure your apps and websites look great and are easy to use.",
+                    "slug": "ui-ux-design"
+                },
+                {
+                    "title": "NFT Art & Web3 Graphics",
+                    "icon": "nft-art.png",
+                    "description": "We create unique NFT artworks and digital collectibles for blockchain projects. We also design Web3 visuals that help your project stand out in the digital space.",
+                    "slug": "nft-art-web3-graphics"
+                },
+                {
+                    "title": "Interactive PDFs & Digital Brochures",
+                    "icon": "interactive-pdfs.png",
+                    "description": "We design professional, clickable PDFs and digital brochures with interactive buttons, links, and animations. Ideal for presentations, portfolios, or client proposals.",
+                    "slug": "interactive-pdfs-digital-brochures"
+                },
+                {
+                    "title": "Templates & Presets Creation",
+                    "icon": "templates-presets.png",
+                    "description": "We create ready-to-use templates for Canva, Photoshop, and other tools, along with Lightroom presets and video editing templates.",
+                    "slug": "templates-presets-creation"
+                }
+            ]
+        },
+        {
+            "category": "Media & Content Services",
+            "icon": "icon-media.png",
+            "services": [
+                {
+                    "title": "Video Editing",
+                    "icon": "video-editing.png",
+                    "description": "We edit professional videos for YouTube, Instagram, Reels, ads, and promotional content. We focus on clean cuts, smooth transitions, modern effects, and premium visuals.",
+                    "slug": "video-editing"
+                },
+                {
+                    "title": "Thumbnail & Hook Designing",
+                    "icon": "thumbnail-designing.png",
+                    "description": "We design attractive thumbnails and help you create video hooks that grab attention and increase click-through rates.",
+                    "slug": "thumbnail-hook-designing"
+                },
+                {
+                    "title": "Podcast Clips & Graphics",
+                    "icon": "podcast-clips.png",
+                    "description": "We convert long podcasts into short, viral clips suitable for social media. We also design branded graphics and audiograms.",
+                    "slug": "podcast-clips-graphics"
+                },
+                {
+                    "title": "Voiceover & Dubbing (AI & Human)",
+                    "icon": "voiceover-dubbing.png",
+                    "description": "We provide professional voiceovers and dubbing services for videos, ads, and explainers. We offer both human voiceovers and AI-generated voices in multiple languages.",
+                    "slug": "voiceover-dubbing-ai-human"
+                },
+                {
+                    "title": "Text-to-Speech Video Creation",
+                    "icon": "text-to-speech.png",
+                    "description": "We create videos using AI voiceovers combined with visuals, animations, or stock footage.",
+                    "slug": "text-to-speech-video-creation"
+                }
+            ]
+        },
+        {
+            "category": "Tech & Development Services",
+            "icon": "icon-tech.png",
+            "services": [
+                {
+                    "title": "Website Development",
+                    "icon": "website-development.png",
+                    "description": "We build clean, fast, and SEO-friendly websites for personal brands, businesses, and e-commerce stores.",
+                    "slug": "website-development"
+                },
+                {
+                    "title": "E-commerce Solutions",
+                    "icon": "e-commerce.png",
+                    "description": "We develop online stores using platforms like Shopify, WooCommerce, or custom solutions. We handle product setup, payment gateways, and mobile-friendly designs.",
+                    "slug": "e-commerce-solutions"
+                },
+                {
+                    "title": "App Development",
+                    "icon": "app-development.png",
+                    "description": "We develop Android and iOS apps with modern UI/UX designs and smooth performance.",
+                    "slug": "app-development"
+                },
+                {
+                    "title": "Online Course & LMS Setup",
+                    "icon": "lms-setup.png",
+                    "description": "We help you launch your own online course platform with video hosting, student dashboards, quizzes, and payment integrations.",
+                    "slug": "online-course-lms-setup"
+                },
+                {
+                    "title": "Micro SaaS Tools Development",
+                    "icon": "micro-saas.png",
+                    "description": "We develop small but powerful software tools like QR code generators, bio link pages, calculators, or other useful web-based tools.",
+                    "slug": "micro-saas-tools-development"
+                },
+                {
+                    "title": "Sales Funnel Setup",
+                    "icon": "sales-funnel.png",
+                    "description": "We design and develop complete sales funnels including landing pages, lead capture forms, email follow-ups, and upsells.",
+                    "slug": "sales-funnel-setup"
+                },
+                {
+                    "title": "WhatsApp & Chatbot Marketing",
+                    "icon": "chatbot-marketing.png",
+                    "description": "We set up automated WhatsApp marketing systems and chatbots for customer support, lead generation, and sales automation.",
+                    "slug": "whatsapp-chatbot-marketing"
+                }
+            ]
+        },
+        {
+            "category": "Marketing & Growth Services",
+            "icon": "icon-marketing.png",
+            "services": [
+                {
+                    "title": "Digital Marketing",
+                    "icon": "digital-marketing.png",
+                    "description": "We manage paid ads, lead generation, SEO strategies, and online campaigns to help your brand grow and reach the right audience.",
+                    "slug": "digital-marketing"
+                },
+                {
+                    "title": "Social Media Management",
+                    "icon": "social-media.png",
+                    "description": "We handle your social media pages including content creation, posting, audience engagement, and strategy planning.",
+                    "slug": "social-media-management"
+                },
+                {
+                    "title": "Influencer Marketing Management",
+                    "icon": "influencer-marketing.png",
+                    "description": "We help brands collaborate with the right influencers, manage the campaigns, and ensure real growth.",
+                    "slug": "influencer-marketing-management"
+                },
+                {
+                    "title": "Email Marketing & Automation",
+                    "icon": "email-marketing.png",
+                    "description": "We create email templates, set up email sequences, and automate your customer follow-ups for better engagement and conversions.",
+                    "slug": "email-marketing-automation"
+                },
+                {
+                    "title": "Online Reputation Management (ORM)",
+                    "icon": "orm.png",
+                    "description": "We monitor and manage your brand’s online reputation by handling reviews, feedback, and customer engagement across platforms.",
+                    "slug": "online-reputation-management-orm"
+                },
+                {
+                    "title": "AI Tools Consultancy & Automation",
+                    "icon": "ai-tools.png",
+                    "description": "We guide businesses and creators on how to use AI tools for content creation, automation, and productivity.",
+                    "slug": "ai-tools-consultancy-automation"
+                },
+                {
+                    "title": "YouTube Channel Setup & Management",
+                    "icon": "youtube-management.png",
+                    "description": "We help you start and grow your YouTube channel. From setting up the channel art and branding to content planning, SEO, and management.",
+                    "slug": "youtube-channel-setup-management"
+                }
+            ]
+        },
+        {
+            "category": "Content & Brand Setup",
+            "icon": "icon-content.png",
+            "services": [
+                {
+                    "title": "Brand Identity Creation",
+                    "icon": "brand-identity.png",
+                    "description": "We create your complete brand identity including logos, color palettes, typography, and brand guidelines to give your business a professional look.",
+                    "slug": "brand-identity-creation"
+                },
+                {
+                    "title": "Content Writing & Copywriting",
+                    "icon": "content-writing.png",
+                    "description": "We write blogs, website content, ad copies, product descriptions, captions, and more to engage your audience and promote your brand effectively.",
+                    "slug": "content-writing-copywriting"
+                },
+                {
+                    "title": "Event Branding & Digital Collateral",
+                    "icon": "event-branding.png",
+                    "description": "We design all the digital materials needed for online and offline events including invites, banners, social media posts, and promotional graphics.",
+                    "slug": "event-branding-digital-collateral"
+                },
+                {
+                    "title": "Digital Business Setup (Business-in-a-Box)",
+                    "icon": "business-setup.png",
+                    "description": "We help startups and creators launch their online business from scratch. This includes branding, website setup, content creation, social media setup, and marketing plans.",
+                    "slug": "digital-business-setup-business-in-a-box"
+                }
+            ]
+        }
+    ]
+}
