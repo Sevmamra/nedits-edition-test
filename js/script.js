@@ -40,13 +40,7 @@ function initAboutSection() {
     fetch('data/about.json')
         .then(response => response.json())
         .then(data => {
-            // Set text content
-            const aboutTextElement = document.getElementById('about-text');
-            if (aboutTextElement) {
-                aboutTextElement.textContent = data.about.intro;
-                initTypewriter('about-text'); // Typewriter effect ko initialize karna
-            }
-            
+            // Set static content
             const philosophyTextElement = document.getElementById('philosophy-text');
             if (philosophyTextElement) {
                 philosophyTextElement.textContent = data.about.philosophy;
@@ -67,42 +61,72 @@ function initAboutSection() {
                     valuesList.appendChild(li);
                 });
             }
+            
+            // Initialize typewriter with callback
+            const aboutTextElement = document.getElementById('about-text');
+            if (aboutTextElement && data.about.intro) {
+                initTypewriter('about-text', data.about.intro, () => {
+                    // Show read more button after typing completes
+                    const readMoreContainer = document.querySelector('.read-more-container');
+                    if (readMoreContainer) {
+                        readMoreContainer.classList.add('visible');
+                    }
+                });
+            }
         })
         .catch(error => console.error('Error loading about data:', error));
 
-    // Read more toggle
+    // Enhanced read more toggle
     const readMoreBtn = document.querySelector('.read-more-btn');
     if (readMoreBtn) {
         readMoreBtn.addEventListener('click', function() {
-            const aboutContent = document.querySelector('.about-content');
-            if (aboutContent) {
-                aboutContent.classList.toggle('about-expanded');
-                
-                // Update button text
-                const isExpanded = aboutContent.classList.contains('about-expanded');
-                this.querySelector('span').textContent = isExpanded ? 'Read Less' : 'Read More';
+            const content = document.querySelector('.about-content');
+            if (!content) return;
+            
+            const isExpanding = !content.classList.contains('about-expanded');
+            
+            // Update button text immediately
+            this.querySelector('span').textContent = isExpanding ? 'Read Less' : 'Read More';
+            
+            // Toggle expansion
+            content.classList.toggle('about-expanded');
+            
+            // Smooth scroll to maintain context
+            if (isExpanding) {
+                setTimeout(() => {
+                    content.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest'
+                    });
+                }, 300);
             }
         });
     }
 }
 
-// Typewriter Effect Function
-function initTypewriter(elementId) {
+// Typewriter Effect with Completion Callback
+function initTypewriter(elementId, text, onComplete) {
     const element = document.getElementById(elementId);
     if (!element) return;
 
+    element.textContent = '';
+    
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i++);
+            
+            // Variable speed for natural feel (faster for spaces)
+            const delay = text.charAt(i-1) === ' ' ? 25 : Math.random() * 30 + 30;
+            setTimeout(type, delay);
+        } else if (onComplete) {
+            onComplete();
+        }
+    }
+    
+    // Start when element is in view
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-            const fullText = element.textContent;
-            element.textContent = '';
-            
-            let i = 0;
-            function type() {
-                if (i < fullText.length) {
-                    element.textContent += fullText.charAt(i++);
-                    setTimeout(type, Math.random() * 10 + 15); // Variable speed for natural feel
-                }
-            }
             type();
             observer.disconnect();
         }
