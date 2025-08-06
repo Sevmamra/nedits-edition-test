@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editing Services | Nedits Edition</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .service-hero {
+      background: linear-gradient(135deg, #ee0979, #ff6a00);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .service-content {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .video-showcase {
+      margin: 40px 0;
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    }
+    .video-showcase iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+    .service-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+    .feature-card {
+      background: #fff5f7;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      color: #ee0979;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+      <div class="container">
+        <h1>Video Editing Services</h1>
+        <p>Professional editing that transforms raw footage into compelling stories</p>
+      </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-content">
+      <div class="container">
+        <div class="video-showcase">
+          <iframe src="https://www.youtube.com/embed/example" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <h2>Elevate Your Video Content</h2>
+        <p>Our video editing services help creators and businesses produce polished, engaging videos that captivate audiences. From YouTube content to promotional videos, we enhance your footage with professional editing techniques.</p>
+        
+        <div class="service-features">
+          <div class="feature-card">
+            <h3>Content Editing</h3>
+            <p>Clean cuts, smooth transitions, and pacing that keeps viewers engaged throughout your video.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Color Grading</h3>
+            <p>Professional color correction and stylistic grading to achieve your desired look.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Motion Graphics</h3>
+            <p>Animated titles, lower thirds, and visual effects that enhance your storytelling.</p>
+          </div>
+        </div>
+
+        <h2>Supported Formats</h2>
+        <ul>
+          <li>YouTube videos & vlogs</li>
+          <li>Product demonstrations</li>
+          <li>Social media clips (Instagram, TikTok)</li>
+          <li>Corporate videos</li>
+          <li>Event highlights</li>
+        </ul>
+
+        <a href="../index.html#services" class="back-button">← Back to All Services</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
