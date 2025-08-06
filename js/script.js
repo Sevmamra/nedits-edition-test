@@ -10,7 +10,7 @@ AOS.init({
     once: true
 });
 
-// Add spinner animation (only once)
+// Add spinner animation styles
 const style = document.createElement('style');
 style.textContent = `
     @keyframes spin {
@@ -32,13 +32,16 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ----------------------------------------------------
-// Naya About Us Section ka Code
+// About Us Section ka Code (Naye aur sahi tareeke se)
 // ----------------------------------------------------
 
-// Load About Data from JSON
+// About Data ko JSON file se load karna
 async function loadAboutData() {
     try {
         const response = await fetch('data/about.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
         populateAboutSection(data.about);
     } catch (error) {
@@ -46,77 +49,69 @@ async function loadAboutData() {
     }
 }
 
+// Data ko HTML ke andar sahi IDs mein daalna
 function populateAboutSection(aboutData) {
-    // Set text content
-    const introText = document.getElementById('about-intro-text');
+    // Intro panel ka content set karna
+    const introText = document.getElementById('dna-intro');
     if (introText) introText.textContent = aboutData.intro;
     
-    const missionText = document.getElementById('about-mission-text');
+    // Mission panel ka content set karna
+    const missionText = document.getElementById('dna-mission');
     if (missionText) missionText.textContent = aboutData.mission;
     
-    const visionText = document.getElementById('about-vision-text');
+    // Vision panel ka content set karna
+    const visionText = document.getElementById('dna-vision');
     if (visionText) visionText.textContent = aboutData.vision;
     
-    // Create features
-    const featuresContainer = document.getElementById('about-features');
-    if (featuresContainer) {
+    // Features (Values) ke cards ko dynamically create karna
+    const featuresContainer = document.getElementById('dna-values');
+    if (featuresContainer && aboutData.features) {
+        featuresContainer.innerHTML = ''; // Pehle se मौजूद content ko saaf kar dena
         aboutData.features.forEach(feature => {
             const featureCard = document.createElement('div');
-            featureCard.className = 'feature-card';
+            featureCard.className = 'value-card';
             featureCard.innerHTML = `
-                <div class="feature-icon">${feature.icon}</div>
-                <div class="feature-content">
-                    <h4>${feature.title}</h4>
-                    <p>${feature.description}</p>
-                </div>
+                <h4>${feature.title}</h4>
+                <p>${feature.description}</p>
             `;
             featuresContainer.appendChild(featureCard);
         });
     }
-    
-    // Create stats
-    const statsContainer = document.getElementById('about-stats');
-    if (statsContainer) {
-        aboutData.stats.forEach(stat => {
-            const statItem = document.createElement('div');
-            statItem.className = 'stat-item';
-            statItem.innerHTML = `
-                <div class="stat-value">${stat.value}</div>
-                <div class="stat-label">${stat.label}</div>
-            `;
-            statsContainer.appendChild(statItem);
-        });
-    }
-    
-    // Animate stats
-    animateStats();
 }
 
-function animateStats() {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                const statValues = document.querySelectorAll('#about-stats .stat-value');
-                statValues.forEach(value => {
-                    const target = parseInt(value.textContent.replace('+', ''));
-                    if (!isNaN(target)) {
-                        animateCounter(value, target, 2000);
-                    }
-                });
-                observer.disconnect();
+// Dna nodes par click listeners add karna jisse panels switch honge
+function initAboutSection() {
+    loadAboutData();
+
+    const dnaNodes = document.querySelectorAll('.dna-node');
+    const dnaPanels = document.querySelectorAll('.dna-panels .panel');
+
+    dnaNodes.forEach(node => {
+        node.addEventListener('click', () => {
+            // Sabhi nodes aur panels se 'active' class hatana
+            dnaNodes.forEach(n => n.classList.remove('active'));
+            dnaPanels.forEach(p => p.classList.remove('active'));
+            
+            // Clicked node par 'active' class lagana
+            node.classList.add('active');
+            
+            // Us node se related panel ko dhoondhna aur 'active' class lagana
+            const targetContent = node.getAttribute('data-content');
+            const targetPanel = document.querySelector(`.${targetContent}-panel`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
             }
-        }, { threshold: 0.3 });
-        observer.observe(aboutSection);
-    }
+        });
+    });
 }
+
 
 // ----------------------------------------------------
 // Main Initialization when DOM is loaded
 // ----------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Load About section data and animations
-    loadAboutData();
+    // 1. About section ka logic initialize karna
+    initAboutSection();
 
     // 2. Hero Background Slideshow
     const hero = document.querySelector('.hero');
@@ -142,20 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(changeBackground, 3000);
     }
 
-    // 3. Services Carousel (Yeh aapki services.js file se aayega)
-    
-    // 4. About Section Animations (AOS library handle karegi)
-    document.querySelectorAll('#about [data-anim]').forEach(el => {
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                el.classList.add('visible');
-                observer.disconnect();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(el);
-    });
-
-    // 5. Section Headings Animation
+    // 3. Section Headings Animation
     const sectionHeadings = document.querySelectorAll('.section h2');
     if (sectionHeadings.length > 0) {
         const headingObserver = new IntersectionObserver((entries) => {
@@ -169,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionHeadings.forEach(h2 => headingObserver.observe(h2));
     }
 
-    // 6. Smooth Scrolling
+    // 4. Smooth Scrolling
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', e => {
             if (link.hash && document.querySelector(link.hash)) {
@@ -181,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 7. Timeline Animations
+    // 5. Timeline Animations
     const timelineItems = document.querySelectorAll('.timeline-item');
     if (timelineItems.length > 0) {
         const timelineObserver = new IntersectionObserver((entries) => {
@@ -194,14 +176,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { threshold: 0.2 });
         timelineItems.forEach(item => timelineObserver.observe(item));
     }
+    
+    // 6. Achievements Counters ko initialize karna
+    initAchievementsCounters();
 
-    // 8. Testimonials Carousel
+    // 7. Testimonials Carousel
     initTestimonialsCarousel();
 
-    // 9. Contact Form
+    // 8. Contact Form
     handleContactForm();
 
-    // 10. Footer Functionality
+    // 9. Footer Functionality
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -260,25 +245,49 @@ document.addEventListener('DOMContentLoaded', function() {
 // Global Functions
 // ----------------------------------------------------
 
-// Counter Animation Function
-function animateCounter(element, target, duration) {
+// Achievements counters ko animate karna
+function initAchievementsCounters() {
+    const achievementsSection = document.getElementById('achievements');
+    if (achievementsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                const clientsCounter = document.getElementById('clientsCounter');
+                const projectsCounter = document.getElementById('projectsCounter');
+                const experienceCounter = document.getElementById('experienceCounter');
+                
+                // Animate each counter separately
+                animateCounter(clientsCounter, 100);
+                animateCounter(projectsCounter, 250);
+                animateCounter(experienceCounter, 5); // Example values
+                
+                observer.disconnect();
+            }
+        }, { threshold: 0.5 });
+        observer.observe(achievementsSection);
+    }
+}
+
+// Generic Counter Animation Function
+function animateCounter(element, target) {
     if (!element) return;
     
+    const duration = 2000; // 2 seconds
     let start = 0;
     const increment = target / (duration / 16);
     
     const updateCounter = () => {
         start += increment;
         if (start < target) {
-            element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = Math.floor(start);
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+            element.textContent = target;
         }
     };
     
     requestAnimationFrame(updateCounter);
 }
+
 
 // Testimonials Carousel Function
 function initTestimonialsCarousel() {
